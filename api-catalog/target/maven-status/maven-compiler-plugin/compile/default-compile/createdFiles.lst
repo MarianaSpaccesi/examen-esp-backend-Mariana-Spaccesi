@@ -1,3 +1,4 @@
+com\dh\catalog\config\LoadBalancerConfiguration.class
 com\dh\catalog\ApiCatalogApplication.class
 com\dh\catalog\client\MovieServiceClient.class
 com\dh\catalog\client\MovieServiceClient$MovieDto.class
