@@ -3,6 +3,7 @@ com\dh\catalog\client\SerieServiceClient$SerieDto$Season$Chapter.class
 com\dh\catalog\client\SerieServiceClient$SerieDto$Season.class
 com\dh\catalog\client\SerieServiceClient$SerieDto.class
 com\dh\catalog\client\MovieServiceClient.class
+com\dh\catalog\service\CatalogService.class
 com\dh\catalog\client\MovieServiceClient$MovieDto.class
 com\dh\catalog\client\SerieServiceClient.class
 com\dh\catalog\controller\CatalogController.class

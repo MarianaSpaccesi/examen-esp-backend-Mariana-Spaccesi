@@ -15,7 +15,7 @@ import java.util.List;
 public interface SerieServiceClient {
 
     @GetMapping("/api/v1/series/{genre}")
-    List<SerieDto> getByGenre(@PathVariable(value = "genre") String genre);
+    List<SerieDto> getSerieByGenre(@PathVariable(value = "genre") String genre);
 
     @Getter
     @Setter
