@@ -26,8 +26,6 @@ public class CatalogService {
     }
 
 
-
-
     public CatalogService(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient, CatalogRepositoryMovie catalogRepositoryMovie, CatalogRepositorySerie catalogRepositorySerie) {
         this.movieServiceClient = movieServiceClient;
         this.serieServiceClient = serieServiceClient;
@@ -35,28 +33,26 @@ public class CatalogService {
         this.catalogRepositorySerie = catalogRepositorySerie;
     }
 
-    @CircuitBreaker(name = "getMovieByGenre", fallbackMethod = "getMovieFallback")
+    @CircuitBreaker(name = "getMovieByGenre", fallbackMethod = "findAllMoviesOffline")
     @Retry(name = "getMovieByGenre")
     public List<MovieServiceClient.MovieDto> getMovieByGenre (String genre) {
         return movieServiceClient.getMovieByGenre(genre);
     }
 
-    @CircuitBreaker(name = "getSerieByGenre", fallbackMethod = "getSerieFallback")
+    @CircuitBreaker(name = "getSerieByGenre", fallbackMethod = "findAllSeriesOffline")
     @Retry(name = "getSerieByGenre")
     public List<SerieServiceClient.SerieDto> getSerieByGenre (String genre) {
         return serieServiceClient.getSerieByGenre(genre);
     }
 
 
-    private List<MovieServiceClient.MovieDto> getMovieFallback (String genre, Throwable throwable) throws Exception {
-        List<MovieServiceClient.MovieDto> movieList = new ArrayList<>();
-        return movieList;
+    /*private List<MovieServiceClient.MovieDto> getMovieFallback (String genre)  {
+        return catalogRepositoryMovie.findAllByGenre(genre);
     }
 
-    private List<SerieServiceClient.SerieDto> getSerieFallback (String genre, Throwable throwable) throws Exception {
-        List<SerieServiceClient.SerieDto> serieList = new ArrayList<>();
-        return serieList;
-    }
+    private List<SerieServiceClient.SerieDto> getSerieFallback (String genre)  {
+        return catalogRepositorySerie.findAllByGenre(genre);
+    }*/
 
     public List<MovieServiceClient.MovieDto> findAllMoviesOffline (String genre ) {
         return catalogRepositoryMovie.findAllByGenre(genre);
