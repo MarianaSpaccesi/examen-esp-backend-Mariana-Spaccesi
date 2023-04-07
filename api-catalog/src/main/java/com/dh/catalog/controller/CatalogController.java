@@ -30,18 +30,18 @@ public class CatalogController {
 		return ResponseEntity.ok(service.getSerieByGenre(genre));
 	}
 
-	@GetMapping("/movieOffline/{genre}")
+	/*@GetMapping("/movieOffline/{genre}")
 	@ResponseStatus(HttpStatus.OK)
-	List<MovieServiceClient.MovieDto> findAllMoviesByGenreOffline(@PathVariable String genre){
+	List<MovieServiceClient.MovieDto> findAllMoviesByGenreOffline(@PathVariable String genre, Throwable t) throws Exception{
 		return service.findAllMoviesOffline(genre);
-	}
+	}*/
 
 
-	@GetMapping("/serieOffline/{genre}")
+	/*@GetMapping("/serieOffline/{genre}")
 	@ResponseStatus(HttpStatus.OK)
 	List<SerieServiceClient.SerieDto> findAllSeriesByGenreOffline(@PathVariable String genre){
 		return service.findAllSeriesOffline(genre);
-	}
+	}*/
 
 
 }

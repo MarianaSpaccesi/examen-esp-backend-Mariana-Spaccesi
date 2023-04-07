@@ -4,12 +4,10 @@ import com.dh.catalog.client.MovieServiceClient;
 import com.dh.catalog.client.SerieServiceClient;
 import com.dh.catalog.repository.CatalogRepositoryMovie;
 import com.dh.catalog.repository.CatalogRepositorySerie;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -20,10 +18,10 @@ public class CatalogService {
     private CatalogRepositorySerie catalogRepositorySerie;
 
 
-    public String createMovie (MovieServiceClient.MovieDto movieDto){
+    /*public String createMovie (MovieServiceClient.MovieDto movieDto){
         var movieSaved = catalogRepositoryMovie.save(movieDto);
         return movieSaved.getId().toString();
-    }
+    }*/
 
 
     public CatalogService(MovieServiceClient movieServiceClient, SerieServiceClient serieServiceClient, CatalogRepositoryMovie catalogRepositoryMovie, CatalogRepositorySerie catalogRepositorySerie) {
@@ -46,7 +44,9 @@ public class CatalogService {
     }
 
 
-    /*private List<MovieServiceClient.MovieDto> getMovieFallback (String genre)  {
+    /* Pruebo metodos sin conexion a mongo
+
+    private List<MovieServiceClient.MovieDto> getMovieFallback (String genre)  {
         return catalogRepositoryMovie.findAllByGenre(genre);
     }
 
@@ -54,12 +54,14 @@ public class CatalogService {
         return catalogRepositorySerie.findAllByGenre(genre);
     }*/
 
-    public List<MovieServiceClient.MovieDto> findAllMoviesOffline (String genre ) {
+    public List<MovieServiceClient.MovieDto> findAllMoviesOffline (String genre, Throwable t) throws Exception {
         return catalogRepositoryMovie.findAllByGenre(genre);
     }
 
-    public List<SerieServiceClient.SerieDto> findAllSeriesOffline (String genre ) {
+    public List<SerieServiceClient.SerieDto> findAllSeriesOffline (String genre, Throwable t) throws Exception {
         return catalogRepositorySerie.findAllByGenre(genre);
     }
+
+
 
 }
