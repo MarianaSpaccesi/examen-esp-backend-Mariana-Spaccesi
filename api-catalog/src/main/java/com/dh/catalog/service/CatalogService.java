@@ -44,15 +44,13 @@ public class CatalogService {
     }
 
 
-    /* Pruebo metodos sin conexion a mongo
-
-    private List<MovieServiceClient.MovieDto> getMovieFallback (String genre)  {
+    public List<MovieServiceClient.MovieDto> getMovieByGenreOffline (String genre)  {
         return catalogRepositoryMovie.findAllByGenre(genre);
     }
 
-    private List<SerieServiceClient.SerieDto> getSerieFallback (String genre)  {
+    public List<SerieServiceClient.SerieDto> findAllSeriesOffline (String genre)  {
         return catalogRepositorySerie.findAllByGenre(genre);
-    }*/
+    }
 
     public List<MovieServiceClient.MovieDto> findAllMoviesOffline (String genre, Throwable t) throws Exception {
         return catalogRepositoryMovie.findAllByGenre(genre);
