@@ -1,5 +1,8 @@
 com\dh\movie\repository\MovieRepository.class
-com\dh\movie\ApiMovieApplication.class
+com\dh\movie\event\MovieCreatedProducerEvent.class
+com\dh\movie\config\RabbitMQConfig.class
 com\dh\movie\model\Movie.class
+com\dh\movie\event\MovieCreatedProducerEvent$Data.class
+com\dh\movie\ApiMovieApplication.class
 com\dh\movie\service\MovieService.class
 com\dh\movie\controller\MovieController.class
