@@ -1,6 +1,5 @@
 package com.dh.catalog.event;
 
-
 import com.dh.catalog.config.RabbitMQConfig;
 import com.dh.catalog.service.CatalogService;
 import lombok.AllArgsConstructor;
@@ -13,19 +12,21 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class MovieCreatedConsumerEvent {
+public class SerieCreatedConsumerEvent {
 
-    private CatalogService service;
+    CatalogService service;
 
-    public MovieCreatedConsumerEvent(CatalogService service) {
+    public SerieCreatedConsumerEvent(CatalogService service) {
         this.service = service;
     }
 
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_NEW_MOVIE)
-    public void listen(MovieCreatedConsumerEvent.Data data){
-        log.info("The movie " + data.getName() + " was successfully created");
-        service.saveMovie(data);
+    @RabbitListener(queues = RabbitMQConfig.QUEUE_NEW_SERIE)
+    public void listen(SerieCreatedConsumerEvent.Data data){
+        log.info("The serie " + data.getName() + " was successfully created");
+        service.saveSerie(data);
     }
+
+
 
 
     @AllArgsConstructor
@@ -34,10 +35,10 @@ public class MovieCreatedConsumerEvent {
     @Setter
     public static class Data{
         private String id;
+
         private String name;
 
         private String genre;
 
-        private String urlStream;
     }
 }

@@ -3,6 +3,7 @@ package com.dh.catalog.service;
 import com.dh.catalog.client.MovieServiceClient;
 import com.dh.catalog.client.SerieServiceClient;
 import com.dh.catalog.event.MovieCreatedConsumerEvent;
+import com.dh.catalog.event.SerieCreatedConsumerEvent;
 import com.dh.catalog.repository.CatalogRepositoryMovie;
 import com.dh.catalog.repository.CatalogRepositorySerie;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
@@ -71,5 +72,13 @@ public class CatalogService {
         }
 
 
+    }
+
+    public void saveSerie(SerieCreatedConsumerEvent.Data data) {
+        SerieServiceClient.SerieDto newSerie = new SerieServiceClient.SerieDto();
+        newSerie.setId(data.getId());
+        newSerie.setGenre(data.getGenre());
+        newSerie.setName(data.getName());
+        catalogRepositorySerie.save(newSerie);
     }
 }
