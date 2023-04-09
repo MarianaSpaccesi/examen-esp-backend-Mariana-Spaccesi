@@ -1,9 +1,10 @@
+D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\config\RabbitMQConfig.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\ApiCatalogApplication.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\client\SerieServiceClient.java
-D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\exceptions\MovieExceptions.java
+D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\event\MovieCreatedConsumerEvent.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\repository\CatalogRepositorySerie.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\service\CatalogService.java
+D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\event\SerieCreatedConsumerEvent.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\client\MovieServiceClient.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\controller\CatalogController.java
-D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\exceptions\MessageErrors.java
 D:\Estudios\digital-house\Especialidad BackEnd\Esp_Back_End\examen-esp-backend-Mariana-Spaccesi\api-catalog\src\main\java\com\dh\catalog\repository\CatalogRepositoryMovie.java
